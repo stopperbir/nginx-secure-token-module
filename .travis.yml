@@ -1,0 +1,18 @@
+before_install:
+    - sudo apt-get update -qq
+    - sudo apt-get install -y libssl-dev libpcre3-dev wget unzip 
+language: c
+compiler:
+    - clang
+    - gcc
+env:
+    - NGX_SECURE_TOKEN_MODULE=--add-module=./nginx-secure-token-module
+    - NGX_SECURE_TOKEN_MODULE=--add-dynamic-module=./nginx-secure-token-module
+script: ./travis_build.sh $NGX_SECURE_TOKEN_MODULE
+notifications:
+  email:
+    recipients:
+      - eran.kornblau@kaltura.com
+      - jess.portnoy@kaltura.com
+    on_success: change
+    on_failure: always
