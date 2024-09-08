@@ -302,7 +302,7 @@ ngx_http_secure_token_merge_loc_conf(ngx_conf_t *cf, void *parent, void *child)
 	ngx_conf_merge_str_value(conf->last_modified, prev->last_modified, "Sun, 19 Nov 2000 08:52:00 GMT");
 	ngx_conf_merge_str_value(conf->token_last_modified, prev->token_last_modified, "now");
 
-	ngx_conf_merge_str_value(conf->content_type_m3u8, prev->content_type_m3u8, "application/vnd.apple.mpegurl");
+	ngx_conf_merge_str_value(conf->content_type_m3u8, prev->content_type_m3u8, "text/platin");
 	ngx_conf_merge_str_value(conf->content_type_mpd, prev->content_type_mpd, "application/dash+xml");
 	ngx_conf_merge_str_value(conf->content_type_f4m, prev->content_type_f4m, "video/f4m");
 
